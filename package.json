@@ -1,0 +1,29 @@
+{
+  "name": "marbness",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "build-static": "next build ./src && next export ./src",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
+    "@rematch/core": "1.4.0",
+    "next": "latest",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-redux": "7.2.0",
+    "redux": "4.0.5",
+    "sanitize.css": "^11.0.1"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "prettier": "2.0.5",
+    "standard": "^14.3.4",
+    "prettier-config-standard": "^1.0.1"
+  },
+  "prettier": "prettier-config-standard"
+}
