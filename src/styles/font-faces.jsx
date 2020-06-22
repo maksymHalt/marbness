@@ -1,6 +1,7 @@
-import { css } from '@emotion/core'
+import React from 'react'
 
-const fontFaces = css`
+/* eslint-disable react/jsx-closing-tag-location */
+const fontFaces = <style global jsx>{`
 @font-face {
   font-family: 'Rubik';
   src: url('/fonts/Rubik-Italic.woff2') format('woff2'),
@@ -128,6 +129,7 @@ const fontFaces = css`
   font-style: normal;
   font-display: swap;
 }
-`
+`}</style>
+/* eslint-enable react/jsx-closing-tag-location */
 
 export default fontFaces

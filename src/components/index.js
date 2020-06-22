@@ -1,0 +1,5 @@
+export * from './Icon/Icon'
+export { default as Link } from './Link'
+export { default as Logotype } from './Logotype'
+export { default as WidthContainer } from './WidthContainer'
+export { default as Space } from './Space'
