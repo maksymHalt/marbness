@@ -10,6 +10,9 @@ const TYPES = {
 
 const Link = ({ type = 'default', href, ...props }) => {
   const SelectedTypeLink = TYPES[type]
+  if (/(https?:\/\/)|((mailto|tel):)/.test(href)) {
+    return <SelectedTypeLink href={href} {...props} />
+  }
   return <NextLink href={href}><SelectedTypeLink {...props} /></NextLink>
 }
 
@@ -17,6 +20,8 @@ export default Link
 
 const A = styled.a`
   cursor: pointer;
+  color: inherit;
+  text-decoration: none;
 
   &:hover {
     background: ${COLORS.pink};

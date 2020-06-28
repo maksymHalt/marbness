@@ -2,6 +2,7 @@ import { Provider } from 'react-redux'
 import { useStore } from '../store'
 import styled from '@emotion/styled'
 import Header from 'containers/Header'
+import Footer from 'containers/Footer'
 
 // style imports
 import 'sanitize.css'
@@ -12,7 +13,6 @@ import GlobalStyles from '../styles/GlobalStyles'
 const Layout = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
   min-height: 100vh;
 `
 
@@ -37,6 +37,7 @@ export default function App ({ Component, pageProps }) {
         <Content>
           <Component {...pageProps} />
         </Content>
+        <Footer />
       </Layout>
     </Provider>
   )

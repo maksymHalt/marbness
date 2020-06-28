@@ -3,23 +3,42 @@ import { Logo } from 'components/Icon'
 import styled from '@emotion/styled'
 import { FONTS } from 'styles'
 
-const Logotype = () => (
-  <Container>
-    <Logo />
-    <Label>Marbness</Label>
-  </Container>
-)
+const TYPES = {
+  oneLine: () => (
+    <OneLineContainer>
+      <Logo />
+      <Label>Marbness</Label>
+    </OneLineContainer>
+  ),
+  twoLines: () => (
+    <TwoLinesContainer>
+      <Logo />
+      <Label>Marbness</Label>
+    </TwoLinesContainer>
+  )
+}
+
+const Logotype = ({ type = 'oneLine' }) => TYPES[type]()
 
 export default Logotype
 
-const Container = styled.div`
-  display: flex;
-  align-items: center;
-`
-
 const Label = styled.span`
-  margin-left: 16px;
   font-family: ${FONTS.rubik};
   font-weight: 700;
   font-size: 24px;
+`
+
+const OneLineContainer = styled.div`
+  display: flex;
+  align-items: center;
+
+  ${Label} {
+    margin-left: 16px;
+  }
+`
+const TwoLinesContainer = styled.div`
+  ${Label} {
+    margin-top: 16px;
+    display: block;
+  }
 `

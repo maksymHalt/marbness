@@ -1,7 +1,8 @@
 import React from 'react'
+import { WidthContainer } from 'components'
 
 const AboutUs = () => {
-  return <div>About us content</div>
+  return <WidthContainer>About us content</WidthContainer>
 }
 
 export default AboutUs
