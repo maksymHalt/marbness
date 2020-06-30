@@ -1,7 +1,8 @@
 import React from 'react'
+import { WidthContainer } from 'components'
 
 const Contact = () => {
-  return <div>Contact content</div>
+  return <WidthContainer>Contact content</WidthContainer>
 }
 
 export default Contact

@@ -1,7 +1,8 @@
 import React from 'react'
+import { WidthContainer } from 'components'
 
 const Portfolio = () => {
-  return <div>Portfolio content</div>
+  return <WidthContainer>Portfolio content</WidthContainer>
 }
 
 export default Portfolio
