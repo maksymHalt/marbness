@@ -9,9 +9,9 @@ export const COLORS = {
   lightestGrey: '#f0f1f5',
   red: '#ff3636',
   white: '#fff'
-}
+};
 
 export const FONTS = {
   rubik: 'Rubik, sans-serif',
   karla: 'Karla, sans-serif'
-}
+};
