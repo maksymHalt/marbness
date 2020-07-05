@@ -5,3 +5,4 @@ export { default as WidthContainer } from './WidthContainer';
 export { default as Space } from './Space';
 export { default as Title } from './Title';
 export { default as Text } from './Text';
+export { default as BlockTitle } from './BlockTitle';

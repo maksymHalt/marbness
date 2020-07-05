@@ -23,12 +23,17 @@ const Caption = styled(Tiny)`
   text-transform: uppercase;
 `;
 
+const BigCaption = styled(Caption)`
+  font-size: 16px;
+`;
+
 const TYPES = {
   body: Body,
   bodyBig1: BodyBig1,
   bodyBig2: BodyBig2,
   tiny: Tiny,
-  caption: Caption
+  caption: Caption,
+  bigCaption: BigCaption
 };
 
 const Text = ({ type, ...props }) => {

@@ -1,8 +1,12 @@
 import React from 'react';
-import { WidthContainer } from 'components';
+import DigitalAgencyBlock from 'containers/DigitalAgencyBlock';
 
 const Home = () => {
-  return <WidthContainer>Hello, Marbness!</WidthContainer>;
+  return (
+    <>
+      <DigitalAgencyBlock />
+    </>
+  );
 };
 
 export default Home;
