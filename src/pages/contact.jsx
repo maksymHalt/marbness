@@ -1,8 +1,8 @@
-import React from 'react'
-import { WidthContainer } from 'components'
+import React from 'react';
+import { WidthContainer } from 'components';
 
 const Contact = () => {
-  return <WidthContainer>Contact content</WidthContainer>
-}
+  return <WidthContainer>Contact content</WidthContainer>;
+};
 
-export default Contact
+export default Contact;

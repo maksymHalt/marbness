@@ -17,7 +17,7 @@
 
 - once `yarn build-static`
 - to start `serve ./src/out`
-  - *Note:* you should install `serve` globally before, by command `yarn global add serve`
+  - _Note:_ you should install `serve` globally before, by command `yarn global add serve`
 
 ## Project structure
 
@@ -38,19 +38,19 @@ There stored static files, like fonts, in folder `public`
 It is recommended to use styled component way to style react elements
 
 ```javascript
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
 
 const StyledComponent = styled.div`
   text-align: center;
   font-size: 20vh;
   line-height: 100vh;
-`
+`;
 
 const Home = () => {
-  return <StyledComponent>Hello, Marbness!</StyledComponent>
-}
+  return <StyledComponent>Hello, Marbness!</StyledComponent>;
+};
 ```
 
 ## Code Style
 
-It is used StandardJS Code Style here. So please install `standard` and `prettier` plugins to make code style errors visible and some of them will be fixed on save (probably for you need to set setting `formatOnSave` to `true` in your editor)
+It is used ESLint Code Style here. So please install `eslint` and `prettier` plugins to make code style errors visible and some of them will be fixed on save (probably for you need to set setting `formatOnSave` to `true` in your editor)

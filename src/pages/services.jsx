@@ -1,8 +1,8 @@
-import React from 'react'
-import { WidthContainer } from 'components'
+import React from 'react';
+import { WidthContainer } from 'components';
 
 const Services = () => {
-  return <WidthContainer>Services content</WidthContainer>
-}
+  return <WidthContainer>Services content</WidthContainer>;
+};
 
-export default Services
+export default Services;
