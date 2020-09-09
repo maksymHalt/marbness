@@ -147,6 +147,9 @@ const Box = styled.div`
 `;
 const ServiceTitle = styled(Title)`
   margin: 32px 0 16px;
+  height: 2em;
+  display: flex;
+  align-items: center;
 `;
 const Description = styled(Text)`
   margin: 16px 0 24px 0;
