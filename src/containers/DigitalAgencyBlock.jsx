@@ -28,7 +28,7 @@ const DigitalAgencyBlock = () => (
 
 export default DigitalAgencyBlock;
 
-const Container = styled(WidthContainer)`
+const Container = styled(WidthContainer.withComponent('section'))`
   margin-top: 60px;
   margin-bottom: 60px;
   display: flex;
