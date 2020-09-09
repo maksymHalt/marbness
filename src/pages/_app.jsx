@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
+import Head from 'next/head';
 import { useStore } from '../store';
 import styled from '@emotion/styled';
 import Header from 'containers/Header';
@@ -34,6 +35,34 @@ const App = ({ Component, pageProps }) => {
   return (
     <Provider store={store}>
       <GlobalStyles />
+      <Head>
+        <title>Marbness</title>
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="favicon/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="favicon/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="favicon/favicon-16x16.png"
+        />
+        <link rel="manifest" href="favicon/site.webmanifest" />
+        <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5" />
+        <link rel="shortcut icon" href="favicon/favicon.ico" />
+        <meta name="apple-mobile-web-app-title" content="Marbness" />
+        <meta name="application-name" content="Marbness" />
+        <meta name="msapplication-TileColor" content="#603cba" />
+        <meta name="msapplication-config" content="favicon/browserconfig.xml" />
+        <meta name="theme-color" content="#65019d" />
+      </Head>
       <Layout>
         <Header />
         <Content>
