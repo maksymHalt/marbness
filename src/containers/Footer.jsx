@@ -74,6 +74,7 @@ export default Footer;
 
 const Container = styled.footer`
   position: relative;
+  overflow-y: hidden;
 `;
 const BackgroundCubes = styled.div`
   position: absolute;
@@ -81,7 +82,6 @@ const BackgroundCubes = styled.div`
   left: 0;
   bottom: 0;
   right: 0;
-  overflow: hidden;
 `;
 const Cube1 = styled.div`
   position: absolute;

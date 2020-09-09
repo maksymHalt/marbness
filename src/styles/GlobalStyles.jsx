@@ -11,6 +11,8 @@ const GlobalStyles = () => (
         body {
           font-family: ${FONTS.karla};
           color: ${COLORS.black};
+          width: 100vw;
+          overflow-x: hidden;
         }
       `}
     />
