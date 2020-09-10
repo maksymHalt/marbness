@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { Title, Text, WidthContainer, BlockTitle } from 'components';
+import { Title, Text, WidthContainer, BlockTitle, ParallaxBackground } from 'components';
 import { COLORS } from 'styles';
 
 const servicesData = [
@@ -36,11 +36,11 @@ const servicesData = [
 
 const ServicesBlock = () => (
   <Container>
-    <BackgroundCubes>
+    <ParallaxBackground>
       <Cube1 />
       <Cube2 />
       <Cube3 />
-    </BackgroundCubes>
+    </ParallaxBackground>
     <Content>
       <BlockTitle>Services</BlockTitle>
       <Title level={1}>What we do</Title>
@@ -72,13 +72,6 @@ const Container = styled.section`
   padding-bottom: 95px;
 `;
 
-const BackgroundCubes = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-`;
 const Cube1 = styled.div`
   position: absolute;
   bottom: 0px;
