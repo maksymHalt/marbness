@@ -81,7 +81,7 @@ export default Footer;
 
 const Container = styled.footer`
   position: relative;
-  overflow-y: hidden;
+  overflow: hidden;
   padding-top: 200px;
 `;
 
