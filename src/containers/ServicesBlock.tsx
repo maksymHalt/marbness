@@ -1,7 +1,13 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { Title, Text, WidthContainer, BlockTitle, ParallaxBackground } from 'components';
-import { COLORS } from 'styles';
+import {
+  Title,
+  Text,
+  WidthContainer,
+  BlockTitle,
+  ParallaxBackground
+} from '@src/components';
+import { COLORS } from '@src/styles';
 
 const servicesData = [
   {

@@ -1,5 +1,4 @@
-import React, { useEffect, useRef } from 'react';
-import PropTypes from 'prop-types';
+import React, { useEffect, useRef, FC } from 'react';
 import styled from '@emotion/styled';
 import { fromString, translate, multiply, toString } from 'rematrix';
 import { throttle } from 'lodash';
@@ -8,15 +7,15 @@ const getRandomInRange = (min, max) => Math.random() * (max - min) + min;
 const COEFFICIENT_MIN = 0.1;
 const COEFFICIENT_MAX = 0.3;
 
-const ParallaxBackground = ({ children }) => {
+const ParallaxBackground: FC = ({ children }) => {
   const containerRef = useRef();
   useEffect(() => {
-    const container = containerRef.current;
+    const container = containerRef.current as HTMLElement;
     const children = container.children;
     const childrenDataList = new Array(children.length)
       .fill({})
       .map((dataItem, index) => {
-        const el = children[index];
+        const el = children[index] as HTMLElement;
         el.style.willChange = 'transform';
         el.style.transition = 'transform 0.1s ease-out';
         return {
@@ -39,7 +38,7 @@ const ParallaxBackground = ({ children }) => {
               } = dataItem;
               const t = translate(-(x - w / 2) * C, -(y - h / 2) * C);
               const newMatrix = multiply(matrix, t);
-              el.style.transform = toString(newMatrix);
+              (el as HTMLElement).style.transform = toString(newMatrix);
             });
           }),
         100
@@ -55,10 +54,6 @@ const ParallaxBackground = ({ children }) => {
 };
 
 export default ParallaxBackground;
-
-ParallaxBackground.propTypes = {
-  children: PropTypes.node.isRequired
-};
 
 const BackgroundContainer = styled.div`
   position: absolute;

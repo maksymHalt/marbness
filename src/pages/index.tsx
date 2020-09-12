@@ -1,6 +1,6 @@
 import React from 'react';
-import DigitalAgencyBlock from 'containers/DigitalAgencyBlock';
-import ServicesBlock from 'containers/ServicesBlock';
+import DigitalAgencyBlock from '@src/containers/DigitalAgencyBlock';
+import ServicesBlock from '@src/containers/ServicesBlock';
 
 const Home = () => {
   return (

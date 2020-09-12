@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { FC, HTMLAttributes } from 'react';
 import styled from '@emotion/styled';
-import { FONTS } from 'styles';
 import { css } from '@emotion/core';
-import PropTypes from 'prop-types';
+import { FONTS } from '@src/styles';
 
 const commonTitleStyles = css`
   margin: 0;
@@ -47,18 +46,25 @@ const H5 = styled.h6`
   text-transform: uppercase;
 `;
 
-const LEVELS = [HERO, H1, H2, H3, H4, H5];
+const LEVELS = {
+  0: HERO,
+  1: H1,
+  2: H2,
+  3: H3,
+  4: H4,
+  5: H5
+};
 
-const Title = ({ level, ...props }) => {
+interface Props extends HTMLAttributes<HTMLHeadingElement> {
+  level?: keyof typeof LEVELS;
+}
+
+const Title: FC<Props> = ({ level, ...props }) => {
   const H = LEVELS[level];
   return <H {...props} />;
 };
 
 export default Title;
-
-Title.propTypes = {
-  level: PropTypes.oneOf(Object.keys(LEVELS).map(Number))
-};
 
 Title.defaultProps = {
   level: 0

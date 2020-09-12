@@ -1,11 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FC } from 'react';
 import { Provider } from 'react-redux';
 import Head from 'next/head';
 import { useStore } from '../store';
 import styled from '@emotion/styled';
-import Header from 'containers/Header';
-import Footer from 'containers/Footer';
+import Header from '@src/containers/Header';
+import Footer from '@src/containers/Footer';
 
 // style imports
 import 'sanitize.css';
@@ -24,7 +23,15 @@ const Content = styled.main`
   flex-shrink: 0;
 `;
 
-const App = ({ Component, pageProps }) => {
+interface Props {
+  Component: React.ElementType;
+  pageProps: {
+    initialReduxState: object;
+    statusCode: number;
+  };
+}
+
+const App: FC<Props> = ({ Component, pageProps }) => {
   const store = useStore(pageProps.initialReduxState);
 
   // TODO: make own design of error page
@@ -75,11 +82,3 @@ const App = ({ Component, pageProps }) => {
 };
 
 export default App;
-
-App.propTypes = {
-  Component: PropTypes.elementType.isRequired,
-  pageProps: PropTypes.shape({
-    initialReduxState: PropTypes.object,
-    statusCode: PropTypes.number
-  }).isRequired
-};

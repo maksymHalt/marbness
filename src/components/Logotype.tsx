@@ -1,8 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Logo } from 'components/Icon';
+import React, { FC } from 'react';
+import { Logo } from '@src/components/Icon';
 import styled from '@emotion/styled';
-import { FONTS } from 'styles';
+import { FONTS } from '@src/styles';
 
 const TYPES = {
   oneLine() {
@@ -23,13 +22,13 @@ const TYPES = {
   }
 };
 
-const Logotype = ({ type }) => TYPES[type]();
+interface Props {
+  type?: keyof typeof TYPES;
+}
+
+const Logotype: FC<Props> = ({ type }) => TYPES[type]();
 
 export default Logotype;
-
-Logotype.propTypes = {
-  type: PropTypes.oneOf(Object.keys(TYPES))
-};
 
 Logotype.defaultProps = {
   type: 'oneLine'

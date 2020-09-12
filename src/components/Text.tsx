@@ -1,8 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FC } from 'react';
 import styled from '@emotion/styled';
 
-const Body = styled.p`
+type WeightType = 'normal' | 'bold';
+
+interface BodyProp {
+  weight?: WeightType;
+}
+
+const Body = styled.p<BodyProp>`
   margin: 0;
   font-size: 14px;
   line-height: 1.5;
@@ -36,18 +41,18 @@ const TYPES = {
   bigCaption: BigCaption
 };
 
-const Text = ({ type, ...props }) => {
+interface Props {
+  type?: keyof typeof TYPES;
+  weight?: WeightType;
+  as?: keyof HTMLElementTagNameMap;
+}
+
+const Text: FC<Props> = ({ type, ...props }) => {
   const T = TYPES[type];
   return <T {...props} />;
 };
 
 export default Text;
-
-Text.propTypes = {
-  type: PropTypes.oneOf(Object.keys(TYPES)),
-  weight: PropTypes.oneOf(['normal', 'bold']),
-  as: PropTypes.string
-};
 
 Text.defaultProps = {
   type: 'body',

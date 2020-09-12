@@ -4,13 +4,18 @@ import {
   WidthContainer,
   Title,
   Link,
+  LinkType,
   Text,
   ParallaxBackground
-} from 'components';
-import { COLORS } from 'styles';
+} from '@src/components';
+import { COLORS } from '@src/styles';
 import styled from '@emotion/styled';
 
-const companyLinks = [
+interface LinkDataItem extends LinkType {
+  label: string;
+}
+
+const companyLinks: LinkDataItem[] = [
   { href: '/', label: 'Home' },
   { href: '/about-us', label: 'About us' },
   { href: '/services', label: 'Services' },
@@ -18,7 +23,7 @@ const companyLinks = [
   { href: '/contact', label: 'Contact us' }
 ];
 
-const followLinks = [
+const followLinks: LinkDataItem[] = [
   { href: 'https://dribbble.com/marbness', label: 'Dribble', target: '_blank' },
   { href: 'https://instagram.com/marbness', label: 'Instagram', target: '_blank' },
   { href: 'https://behance.net/marbness', label: 'Behance', target: '_blank' },

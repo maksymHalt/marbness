@@ -2,7 +2,11 @@ import { useMemo } from 'react';
 import { init } from '@rematch/core';
 import * as models from '../models';
 
-export const initStore = () => init({ models });
+export const initStore = (initialState) =>
+  init({
+    models,
+    redux: { initialState }
+  });
 
 // Code below is just for serving Redux in SSR
 

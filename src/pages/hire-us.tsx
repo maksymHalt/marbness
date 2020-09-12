@@ -1,5 +1,5 @@
 import React from 'react';
-import { WidthContainer } from 'components';
+import { WidthContainer } from '@src/components';
 
 const HireUs = () => {
   return <WidthContainer>Hire us content</WidthContainer>;

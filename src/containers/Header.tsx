@@ -1,8 +1,12 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { Logotype, WidthContainer, Link, Space } from 'components';
+import { Logotype, WidthContainer, Link, Space, LinkType } from '@src/components';
 
-const navList = [
+interface LinkDataItem extends LinkType {
+  label: string;
+}
+
+const navList: LinkDataItem[] = [
   { href: '/about-us', label: 'About us' },
   { href: '/services', label: 'Services' },
   { href: '/portfolio', label: 'Portfolio' },

@@ -1,9 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FC, HTMLAttributes } from 'react';
 import NextLink from 'next/link';
 import { css } from '@emotion/core';
 import styled from '@emotion/styled';
-import { COLORS, FONTS } from 'styles';
+import { COLORS, FONTS } from '@src/styles';
 
 const A = styled.a`
   cursor: pointer;
@@ -75,7 +74,13 @@ const TYPES = {
   ghostButton: GhostButton
 };
 
-const Link = ({ type, href, ...props }) => {
+export interface LinkType extends HTMLAttributes<HTMLAnchorElement> {
+  type?: keyof typeof TYPES;
+  href: string;
+  target?: '_blank' | '_self' | '_parent' | 'top';
+}
+
+const Link: FC<LinkType> = ({ type, href, ...props }) => {
   const SelectedTypeLink = TYPES[type];
   if (/(https?:\/\/)|((mailto|tel):)/.test(href)) {
     return <SelectedTypeLink href={href} {...props} />;
@@ -88,12 +93,6 @@ const Link = ({ type, href, ...props }) => {
 };
 
 export default Link;
-
-Link.propTypes = {
-  type: PropTypes.oneOf(Object.keys(TYPES)),
-  href: PropTypes.string.isRequired,
-  target: PropTypes.oneOf(['_blank', '_self', '_parent', 'top'])
-};
 
 Link.defaultProps = {
   type: 'default',

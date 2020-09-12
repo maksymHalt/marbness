@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { Title, Text, Link, WidthContainer, Space, BlockTitle } from 'components';
+import { Title, Text, Link, WidthContainer, Space, BlockTitle } from '@src/components';
 
 const DigitalAgencyBlock = () => (
   <Container>
