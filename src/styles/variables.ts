@@ -12,7 +12,8 @@ export const COLORS = {
   lightGrey: '#d1d1db',
   lightestGrey: '#f0f1f5',
   red: '#ff3636',
-  white: '#fff'
+  white: '#fff',
+  blue1: '#2f80ed'
 };
 
 export const FONTS = {
