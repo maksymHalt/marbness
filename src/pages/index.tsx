@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { FC } from 'react';
 import DigitalAgencyBlock from '@src/containers/DigitalAgencyBlock';
 import ServicesBlock from '@src/containers/ServicesBlock';
 
-const Home = () => {
+const Home: FC = () => {
   return (
     <>
       <DigitalAgencyBlock />

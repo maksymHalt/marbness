@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
-import { init } from '@rematch/core';
-import * as models from '../models';
+import { init, RematchStore, InitConfig } from '@rematch/core';
+import * as models from '@src/models';
 
-export const initStore = (initialState) =>
+export const initStore: (InitConfig) => RematchStore = (initialState) =>
   init({
     models,
     redux: { initialState }
@@ -12,7 +12,7 @@ export const initStore = (initialState) =>
 
 let store;
 
-export const initializeStore = (preloadedState) => {
+export const initializeStore: (RematchStore) => RematchStore = (preloadedState) => {
   let _store = store || initStore(preloadedState);
 
   // After navigating to a page with an initial Redux state, merge that state
@@ -34,7 +34,7 @@ export const initializeStore = (preloadedState) => {
   return _store;
 };
 
-export function useStore(initialState) {
+export function useStore(initialState: InitConfig): RematchStore {
   const store = useMemo(() => initializeStore(initialState), [initialState]);
   return store;
 }

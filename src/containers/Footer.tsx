@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import {
   Logotype,
   WidthContainer,
@@ -32,7 +32,7 @@ const followLinks: LinkDataItem[] = [
   { href: 'https://medium.com/marbness', label: 'Medium', target: '_blank' }
 ];
 
-const Footer = () => {
+const Footer: FC = () => {
   return (
     <Container>
       <ParallaxBackground>

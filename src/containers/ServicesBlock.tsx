@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from '@emotion/styled';
 import {
   Title,
@@ -40,7 +40,7 @@ const servicesData = [
   }
 ];
 
-const ServicesBlock = () => (
+const ServicesBlock: FC = () => (
   <Container>
     <ParallaxBackground>
       <Cube1 />

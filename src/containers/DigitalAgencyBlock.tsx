@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from '@emotion/styled';
 import { Title, Text, Link, WidthContainer, Space, BlockTitle } from '@src/components';
 
-const DigitalAgencyBlock = () => (
+const DigitalAgencyBlock: FC = () => (
   <Container>
     <LeftColumn>
       <BlockTitle>Digital agency</BlockTitle>

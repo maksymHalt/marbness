@@ -1,4 +1,5 @@
 {
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 2018,
     "sourceType": "module"
@@ -14,23 +15,24 @@
     "plugin:import/warnings",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
     "prettier"
   ],
-  "plugins": ["react", "jsx-a11y", "import", "prettier"],
+  "plugins": ["react", "jsx-a11y", "import", "prettier", "@typescript-eslint"],
   "settings": {
     "react": {
       "version": "detect"
     },
     "linkComponents": ["Link"],
     "import/resolver": {
-      "node": {
-        "extensions": [".js", ".jsx"],
-        "moduleDirectory": ["node_modules", "src"]
-      }
+      "typescript": {}
     }
   },
   "rules": {
     "prettier/prettier": "error",
-    "react/require-default-props": "error"
-  }
+    "react/require-default-props": "error",
+    "react/prop-types": "off"
+  },
+  "ignorePatterns": ["custom.d.ts"]
 }

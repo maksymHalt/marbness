@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { CSSProperties } from 'react';
 
 interface Props {
   direction?: 'row' | 'column' | 'row-reverse' | 'column-reverse';

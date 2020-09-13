@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { WidthContainer } from '@src/components';
 
-const Portfolio = () => {
+const Portfolio: FC = () => {
   return <WidthContainer>Portfolio content</WidthContainer>;
 };
 

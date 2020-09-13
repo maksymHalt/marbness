@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from '@emotion/styled';
 import { Logotype, WidthContainer, Link, Space, LinkType } from '@src/components';
 
@@ -14,7 +14,7 @@ const navList: LinkDataItem[] = [
   { href: '/hire-us', label: 'Hire us', type: 'button' }
 ];
 
-const Header = () => (
+const Header: FC = () => (
   <Container>
     <Content>
       <Link href="/">

@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
 import { Provider } from 'react-redux';
 import Head from 'next/head';
-import { useStore } from '../store';
+import { RematchStore } from '@rematch/core';
+import { useStore } from '@src/store';
 import styled from '@emotion/styled';
 import Header from '@src/containers/Header';
 import Footer from '@src/containers/Footer';
@@ -10,7 +11,7 @@ import Footer from '@src/containers/Footer';
 import 'sanitize.css';
 import 'sanitize.css/forms.css';
 import 'sanitize.css/typography.css';
-import GlobalStyles from '../styles/GlobalStyles';
+import GlobalStyles from '@src/styles/GlobalStyles';
 
 const Layout = styled.div`
   display: flex;
@@ -26,7 +27,7 @@ const Content = styled.main`
 interface Props {
   Component: React.ElementType;
   pageProps: {
-    initialReduxState: object;
+    initialReduxState: RematchStore;
     statusCode: number;
   };
 }

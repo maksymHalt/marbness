@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Global, css } from '@emotion/core';
 import fontFaces from './font-faces';
 import { FONTS, COLORS } from './variables';
 
-const GlobalStyles = () => (
+const GlobalStyles: FC = () => (
   <>
     {fontFaces}
     <Global
