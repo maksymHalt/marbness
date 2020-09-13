@@ -42,6 +42,7 @@ const TYPES = {
 };
 
 interface Props {
+  /** Type of appearance text element */
   type?: keyof typeof TYPES;
   weight?: WeightType;
   as?: keyof HTMLElementTagNameMap;

@@ -56,6 +56,7 @@ const LEVELS = {
 };
 
 interface Props extends HTMLAttributes<HTMLHeadingElement> {
+  /** Set level of Heading element from 0 (Hero) to 5 (H5). Default: 0 (Hero) */
   level?: keyof typeof LEVELS;
 }
 

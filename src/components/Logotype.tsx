@@ -23,6 +23,7 @@ const TYPES = {
 };
 
 interface Props {
+  /** Type of appearance logotype */
   type?: keyof typeof TYPES;
 }
 

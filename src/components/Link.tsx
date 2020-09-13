@@ -75,6 +75,7 @@ const TYPES = {
 };
 
 export interface LinkType extends HTMLAttributes<HTMLAnchorElement> {
+  /** Type of appearance link element */
   type?: keyof typeof TYPES;
   href: string;
   target?: '_blank' | '_self' | '_parent' | 'top';
