@@ -5,7 +5,8 @@ import {
   Text,
   WidthContainer,
   BlockTitle,
-  ParallaxBackground
+  ParallaxBackground,
+  CubeWithProps
 } from '@src/components';
 import { COLORS } from '@src/styles';
 
@@ -78,39 +79,17 @@ const Container = styled.section`
   padding-bottom: 95px;
 `;
 
-const Cube1 = styled.div`
-  position: absolute;
+const Cube1 = styled(CubeWithProps({ size: 102, color: 'saturated' }))`
   bottom: 0px;
   left: -77px;
-  width: 102px;
-  height: 102px;
-  background: linear-gradient(311.12deg, #aa66e9 0%, #9340e0 100%);
-  mix-blend-mode: multiply;
-  box-shadow: 0px 4px 20px rgba(156, 80, 228, 0.25), 0px 2px 4px rgba(160, 86, 229, 0.1);
-  border-radius: 12px;
-  transform: rotate(-28.51deg);
 `;
-const Cube2 = styled.div`
-  position: absolute;
+const Cube2 = styled(CubeWithProps({ size: 608, color: 'faded' }))`
   bottom: 128px;
   right: 67px;
-  width: 608px;
-  height: 608px;
-  background: #fafaff;
-  mix-blend-mode: multiply;
-  border-radius: 12px;
-  transform: rotate(-28.51deg);
 `;
-const Cube3 = styled.div`
-  position: absolute;
+const Cube3 = styled(CubeWithProps({ size: 224, color: 'faded' }))`
   bottom: 632px;
   right: -84px;
-  width: 224px;
-  height: 224px;
-  background: #fafaff;
-  mix-blend-mode: multiply;
-  border-radius: 12px;
-  transform: rotate(-28.51deg);
 `;
 
 const Content = styled(WidthContainer)`

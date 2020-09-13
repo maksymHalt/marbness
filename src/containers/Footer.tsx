@@ -6,7 +6,8 @@ import {
   Link,
   LinkType,
   Text,
-  ParallaxBackground
+  ParallaxBackground,
+  CubeWithProps
 } from '@src/components';
 import { COLORS } from '@src/styles';
 import styled from '@emotion/styled';
@@ -90,40 +91,17 @@ const Container = styled.footer`
   padding-top: 200px;
 `;
 
-const Cube1 = styled.div`
-  position: absolute;
+const Cube1 = styled(CubeWithProps({ size: 432, color: 'faded' }))`
   bottom: 76px;
   left: -216px;
-  width: 432px;
-  height: 432px;
-  background: #fafaff;
-  mix-blend-mode: multiply;
-  border-radius: 12px;
-  transform: rotate(-28.51deg);
 `;
-const Cube2 = styled.div`
-  position: absolute;
+const Cube2 = styled(CubeWithProps({ size: 224, color: 'saturated' }))`
   bottom: -106px;
   right: 25px;
-  width: 224px;
-  height: 224px;
-  background: linear-gradient(311.12deg, #aa66e9 0%, #9340e0 100%);
-  mix-blend-mode: multiply;
-  box-shadow: 0px 4px 20px rgba(156, 80, 228, 0.25), 0px 2px 4px rgba(160, 86, 229, 0.1);
-  border-radius: 12px;
-  transform: rotate(-28.51deg);
 `;
-const Cube3 = styled.div`
-  position: absolute;
+const Cube3 = styled(CubeWithProps({ size: 55, color: 'saturated' }))`
   bottom: 180px;
   right: 22px;
-  width: 55px;
-  height: 55px;
-  background: linear-gradient(311.12deg, #aa66e9 0%, #9340e0 100%);
-  mix-blend-mode: multiply;
-  box-shadow: 0px 4px 20px rgba(156, 80, 228, 0.25), 0px 2px 4px rgba(160, 86, 229, 0.1);
-  border-radius: 12px;
-  transform: rotate(-28.51deg);
 `;
 
 const Content = styled(WidthContainer)`
