@@ -10,15 +10,20 @@
     "test:fix": "tsc && eslint --ext .tsx,.ts --fix ."
   },
   "dependencies": {
+    "@emotion/babel-preset-css-prop": "^10.0.27",
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
     "@rematch/core": "1.4.0",
+    "animated-scroll-to": "^2.0.10",
     "lodash": "^4.17.20",
     "next": "latest",
     "prop-types": "^15.7.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-indiana-drag-scroll": "^1.6.1",
     "react-redux": "7.2.0",
+    "react-scrollbars-custom": "^4.0.25",
+    "react-transition-group": "^4.4.1",
     "redux": "4.0.5",
     "rematrix": "^0.7.0",
     "sanitize.css": "^11.0.1"

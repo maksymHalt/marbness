@@ -1,8 +1,9 @@
 import React, { FC, HTMLAttributes } from 'react';
 import NextLink from 'next/link';
-import { css } from '@emotion/core';
 import styled from '@emotion/styled';
-import { COLORS, FONTS } from '@src/styles';
+import { COLORS } from '@src/styles';
+import { ButtonStyle, GhostButtonStyle } from './Button';
+import { addProps } from '@src/utils';
 
 const A = styled.a`
   cursor: pointer;
@@ -14,59 +15,13 @@ const A = styled.a`
   }
 `;
 
-const commonButtonStyles = css`
-  cursor: pointer;
-  font-family: ${FONTS.rubik};
-  font-weight: 500;
-  font-size: 16px;
-  text-transform: uppercase;
-  padding: 16px 54px;
-`;
+const Button = (addProps(ButtonStyle, { as: 'a' }) as unknown) as FC<
+  HTMLAttributes<HTMLAnchorElement>
+>;
 
-const Button = styled.a`
-  ${commonButtonStyles}
-  color: ${COLORS.white};
-  background: ${COLORS.pink};
-  border-radius: 12px;
-  box-shadow:
-    0px 4px 20px rgba(243, 97, 132, 0.25),
-    0px 2px 4px rgba(241, 109, 141, 0.1);
-
-  &:hover {
-    background: ${COLORS.lightViolet};
-    box-shadow:
-      0px 4px 20px rgba(143, 57, 223, 0.25),
-      0px 2px 4px rgba(143, 57, 223, 0.1);
-  }
-
-  &:active {
-    background: ${COLORS.violet};
-    box-shadow:
-      0px 4px 20px rgba(143, 57, 223, 0.25),
-      0px 2px 4px rgba(143, 57, 223, 0.1);
-  }
-
-  &[disabled] {
-    background: ${COLORS.lightGrey};
-    box-shadow: none;
-  }
-`;
-
-const GhostButton = styled.a`
-  ${commonButtonStyles}
-  color: ${COLORS.black};
-  background: transparent;
-  border-radius: 12px;
-  border: 1px solid ${COLORS.pinkSolid};
-
-  &:hover {
-    border-color: ${COLORS.lightVioletSolid};
-  }
-
-  &:active {
-    border-color: ${COLORS.violetSolid};
-  }
-`;
+const GhostButton = (addProps(GhostButtonStyle, { as: 'a' }) as unknown) as FC<
+  HTMLAttributes<HTMLAnchorElement>
+>;
 
 const TYPES = {
   default: A,
@@ -87,7 +42,7 @@ const Link: FC<LinkType> = ({ type, href, ...props }) => {
     return <SelectedTypeLink href={href} {...props} />;
   }
   return (
-    <NextLink href={href}>
+    <NextLink href={href} passHref>
       <SelectedTypeLink {...props} />
     </NextLink>
   );

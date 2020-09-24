@@ -42,8 +42,9 @@ const TYPES = {
 };
 
 interface Props {
-  /** Type of appearance text element */
+  /** Type of appearance text element, default: 'body' */
   type?: keyof typeof TYPES;
+  /** Normal or bold, default: normal */
   weight?: WeightType;
   as?: keyof HTMLElementTagNameMap;
 }
