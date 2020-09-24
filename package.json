@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "build-static": "next build ./src && next export ./src",
+    "build-static": "next build && next export",
     "start": "next start",
     "test": "tsc && eslint --ext .tsx,.ts .",
     "test:fix": "tsc && eslint --ext .tsx,.ts --fix ."
