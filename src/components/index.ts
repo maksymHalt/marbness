@@ -12,6 +12,7 @@ export { default as Checkbox } from './Checkbox';
 export { default as Isotope } from './Isotope';
 export { default as ScrollContainer } from './ScrollContainer';
 export { default as Button } from './Button';
+export { default as ReviewRating } from './ReviewRating';
 
 export type { LinkType } from './Link';
 export type { ButtonType } from './Button';

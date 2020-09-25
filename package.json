@@ -26,7 +26,8 @@
     "react-transition-group": "^4.4.1",
     "redux": "4.0.5",
     "rematrix": "^0.7.0",
-    "sanitize.css": "^11.0.1"
+    "sanitize.css": "^11.0.1",
+    "swiper": "^6.3.0"
   },
   "license": "UNLICENSED",
   "private": true,

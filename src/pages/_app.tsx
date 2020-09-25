@@ -12,6 +12,7 @@ import 'sanitize.css';
 import 'sanitize.css/forms.css';
 import 'sanitize.css/typography.css';
 import GlobalStyles from '@src/styles/GlobalStyles';
+import 'swiper/swiper-bundle.min.css';
 
 const Layout = styled.div`
   display: flex;

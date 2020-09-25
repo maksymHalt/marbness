@@ -1,11 +1,4 @@
-import React, {
-  FC,
-  ComponentType,
-  Fragment,
-  useRef,
-  useLayoutEffect,
-  useState
-} from 'react';
+import React, { FC, ComponentType, Fragment, useRef, useEffect, useState } from 'react';
 import { Transition, TransitionGroup } from 'react-transition-group';
 import { css } from '@emotion/core';
 
@@ -27,7 +20,7 @@ const Isotope: FC<Props> = ({ data, filterBy, render, Component, duration = 300 
   const [positions, setPositions] = useState({});
   const [width, setWidth] = useState(0);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (hiddenContainerRef.current) {
       const hiddenContainer = hiddenContainerRef.current as HTMLElement;
       setWidth(hiddenContainer.offsetWidth);
