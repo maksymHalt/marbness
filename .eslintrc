@@ -32,7 +32,8 @@
   "rules": {
     "prettier/prettier": "error",
     "react/require-default-props": "error",
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "no-console": "error"
   },
   "ignorePatterns": ["custom.d.ts"]
 }

@@ -128,8 +128,6 @@ const WorksBlock: FC = () => {
   }, []);
   const scrollerRef = useRef<HTMLElement>();
 
-  console.log(scrollerRef.current);
-
   return (
     <Container>
       <ParallaxBackground>
