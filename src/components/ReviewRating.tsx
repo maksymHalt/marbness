@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import styled from '@emotion/styled';
-import { addProps } from '@src/utils';
+import { addProps, ValueOf } from '@src/utils';
 import { COLORS } from '@src/styles';
 import Title from './Title';
 import { Star } from './Icon';
@@ -14,7 +14,7 @@ interface Props {
 }
 
 interface StarListProps {
-  color?: keyof typeof COLORS;
+  color?: ValueOf<typeof COLORS>;
 }
 
 interface StarTrackProps extends StarListProps {

@@ -14,7 +14,9 @@ const commonButtonStyles = css`
   border: 0;
 `;
 
-export const ButtonStyle = styled.button`
+type StyledType = { as?: string };
+
+export const ButtonStyle = styled.button<StyledType>`
   ${commonButtonStyles}
   color: ${COLORS.white};
   background: ${COLORS.pink};
@@ -43,7 +45,7 @@ export const ButtonStyle = styled.button`
   }
 `;
 
-export const GhostButtonStyle = styled.button`
+export const GhostButtonStyle = styled.button<StyledType>`
   ${commonButtonStyles}
   color: ${COLORS.black};
   background: transparent;

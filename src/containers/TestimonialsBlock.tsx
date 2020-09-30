@@ -7,7 +7,7 @@ import {
   WidthContainer,
   BlockTitle,
   ParallaxBackground,
-  CubeWithProps,
+  Cube,
   ReviewRating,
   Button,
   ArrowLeft,
@@ -88,15 +88,15 @@ const Container = styled.section`
   padding-bottom: 95px;
 `;
 
-const Cube1 = styled(CubeWithProps({ size: 780, color: 'faded' }))`
+const Cube1 = styled(addProps(Cube, { size: 780, color: 'faded' }))`
   top: 0;
   left: -560px;
 `;
-const Cube2 = styled(CubeWithProps({ size: 46, color: 'saturated' }))`
+const Cube2 = styled(addProps(Cube, { size: 46, color: 'saturated' }))`
   top: 430px;
   right: 32px;
 `;
-const Cube3 = styled(CubeWithProps({ size: 104, color: 'saturated' }))`
+const Cube3 = styled(addProps(Cube, { size: 104, color: 'saturated' }))`
   top: 260px;
   right: -62px;
 `;

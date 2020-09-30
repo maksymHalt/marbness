@@ -6,9 +6,10 @@ import {
   WidthContainer,
   BlockTitle,
   ParallaxBackground,
-  CubeWithProps
+  Cube
 } from '@src/components';
 import { COLORS } from '@src/styles';
+import { addProps } from '@src/utils';
 
 const servicesData = [
   {
@@ -79,15 +80,15 @@ const Container = styled.section`
   padding-bottom: 95px;
 `;
 
-const Cube1 = styled(CubeWithProps({ size: 102, color: 'saturated' }))`
+const Cube1 = styled(addProps(Cube, { size: 102, color: 'saturated' }))`
   bottom: 0px;
   left: -77px;
 `;
-const Cube2 = styled(CubeWithProps({ size: 608, color: 'faded' }))`
+const Cube2 = styled(addProps(Cube, { size: 608, color: 'faded' }))`
   bottom: 128px;
   right: 67px;
 `;
-const Cube3 = styled(CubeWithProps({ size: 224, color: 'faded' }))`
+const Cube3 = styled(addProps(Cube, { size: 224, color: 'faded' }))`
   bottom: 632px;
   right: -84px;
 `;

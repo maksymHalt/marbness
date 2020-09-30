@@ -1,13 +1,8 @@
 import React, { FC } from 'react';
 import styled from '@emotion/styled';
-import {
-  Text,
-  WidthContainer,
-  ParallaxBackground,
-  Quote,
-  CubeWithProps
-} from '@src/components';
+import { Text, WidthContainer, ParallaxBackground, Quote, Cube } from '@src/components';
 import { COLORS, FONTS } from '@src/styles';
+import { addProps } from '@src/utils';
 
 const ReviewBlock: FC = () => (
   <Container>
@@ -45,15 +40,15 @@ const Container = styled.section`
   padding: 50px 0;
 `;
 
-const Cube1 = styled(CubeWithProps({ size: 732, color: 'faded' }))`
+const Cube1 = styled(addProps(Cube, { size: 732, color: 'faded' }))`
   bottom: 0;
   left: -488px;
 `;
-const Cube2 = styled(CubeWithProps({ size: 46, color: 'saturated' }))`
+const Cube2 = styled(addProps(Cube, { size: 46, color: 'saturated' }))`
   bottom: 327px;
   right: 144px;
 `;
-const Cube3 = styled(CubeWithProps({ size: 116, color: 'saturated' }))`
+const Cube3 = styled(addProps(Cube, { size: 116, color: 'saturated' }))`
   bottom: 230px;
   right: -20px;
 `;

@@ -7,10 +7,11 @@ import {
   LinkType,
   Text,
   ParallaxBackground,
-  CubeWithProps
+  Cube
 } from '@src/components';
 import { COLORS } from '@src/styles';
 import styled from '@emotion/styled';
+import { addProps } from '@src/utils';
 
 interface LinkDataItem extends LinkType {
   label: string;
@@ -91,15 +92,15 @@ const Container = styled.footer`
   padding-top: 200px;
 `;
 
-const Cube1 = styled(CubeWithProps({ size: 432, color: 'faded' }))`
+const Cube1 = styled(addProps(Cube, { size: 432, color: 'faded' }))`
   bottom: 76px;
   left: -216px;
 `;
-const Cube2 = styled(CubeWithProps({ size: 224, color: 'saturated' }))`
+const Cube2 = styled(addProps(Cube, { size: 224, color: 'saturated' }))`
   bottom: -106px;
   right: 25px;
 `;
-const Cube3 = styled(CubeWithProps({ size: 55, color: 'saturated' }))`
+const Cube3 = styled(addProps(Cube, { size: 55, color: 'saturated' }))`
   bottom: 180px;
   right: 22px;
 `;

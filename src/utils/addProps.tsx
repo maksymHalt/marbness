@@ -1,9 +1,6 @@
 import React, { ComponentType, FC, forwardRef } from 'react';
 
-type addPropsType = <T>(
-  Component: ComponentType<T>,
-  addedProps: Record<string, unknown>
-) => FC<T>;
+type addPropsType = <T>(Component: ComponentType<T>, addedProps: T) => FC<Partial<T>>;
 
 const addProps: addPropsType = (Component, addedProps) => {
   const newComponent = (props, ref) => <Component ref={ref} {...addedProps} {...props} />;

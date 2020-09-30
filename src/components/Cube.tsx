@@ -1,4 +1,3 @@
-import React, { FC } from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 
@@ -29,7 +28,3 @@ const Cube = styled.div<Props>`
 `;
 
 export default Cube;
-
-export const CubeWithProps: (p: Props) => FC = (props) => (otherProps) => (
-  <Cube {...props} {...otherProps} />
-);

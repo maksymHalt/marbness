@@ -7,7 +7,7 @@ import {
   WidthContainer,
   BlockTitle,
   ParallaxBackground,
-  CubeWithProps,
+  Cube,
   Checkbox,
   Space,
   Isotope,
@@ -186,7 +186,7 @@ const Container = styled.section`
   padding-bottom: 95px;
 `;
 
-const Cube1 = styled(CubeWithProps({ size: 224, color: 'faded' }))`
+const Cube1 = styled(addProps(Cube, { size: 224, color: 'faded' }))`
   top: 100px;
   left: -112px;
 `;
