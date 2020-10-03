@@ -8,8 +8,7 @@ import {
   BlockTitle,
   ParallaxBackground,
   Cube,
-  Checkbox,
-  Space,
+  CheckboxGroup,
   Isotope,
   ScrollContainer,
   ArrowRight,
@@ -68,10 +67,10 @@ const renderTextItem = (props: RenderItemType) => (
 
 const worksData = {
   filters: [
-    { tag: 'interfaceDesign', label: 'Interface Design' },
-    { tag: 'development', label: 'Development' },
-    { tag: 'brandIdentity', label: 'Brand Identity' },
-    { tag: 'uxAudit', label: 'UX Audit' }
+    { name: 'interfaceDesign', label: 'Interface Design' },
+    { name: 'development', label: 'Development' },
+    { name: 'brandIdentity', label: 'Brand Identity' },
+    { name: 'uxAudit', label: 'UX Audit' }
   ],
   content: [
     {
@@ -119,12 +118,8 @@ worksData.content = worksData.content.map((item, index) => ({
 
 const WorksBlock: FC = () => {
   const [filterBy, setFilterBy] = useState([]);
-  const onFilterChange = useCallback(({ target: { name, checked } }) => {
-    if (checked) {
-      setFilterBy((filterBy) => [...filterBy, name]);
-    } else {
-      setFilterBy((filterBy) => filterBy.filter((item) => item !== name));
-    }
+  const onFilterChange = useCallback(({ target: { value } }) => {
+    setFilterBy(value);
   }, []);
   const scrollerRef = useRef<HTMLElement>();
 
@@ -136,14 +131,7 @@ const WorksBlock: FC = () => {
       <Content>
         <BlockTitle>Works</BlockTitle>
         <Title level={1}>Latest projects</Title>
-
-        <FilterList>
-          {worksData.filters.map(({ tag, label }) => (
-            <FilterItem key={tag} name={tag} onChange={onFilterChange}>
-              {label}
-            </FilterItem>
-          ))}
-        </FilterList>
+        <FilterGroup dataList={worksData.filters} onChange={onFilterChange} />
       </Content>
       <ScrollContainer
         height={(CELL_HEIGHT + GRID_GAP) * 2}
@@ -195,10 +183,9 @@ const Content = styled(WidthContainer)`
   position: relative;
 `;
 
-const FilterList = styled(Space)`
+const FilterGroup = styled(CheckboxGroup)`
   margin: 40px 0 24px;
 `;
-const FilterItem = styled(Checkbox)``;
 
 const ContentList = styled.div<ContentType>`
   position: relative;

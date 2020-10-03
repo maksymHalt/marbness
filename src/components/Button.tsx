@@ -3,7 +3,7 @@ import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 import { COLORS, FONTS } from '@src/styles';
 
-const commonButtonStyles = css`
+const commonButtonStyles = (fullWidth) => css`
   cursor: pointer;
   font-family: ${FONTS.rubik};
   font-weight: 500;
@@ -12,12 +12,16 @@ const commonButtonStyles = css`
   padding: 16px 54px;
   text-decoration: none;
   border: 0;
+  ${fullWidth &&
+  css`
+    width: 100%;
+  `}
 `;
 
-type StyledType = { as?: string };
+type StyledType = { as?: string; fullWidth?: boolean };
 
 export const ButtonStyle = styled.button<StyledType>`
-  ${commonButtonStyles}
+  ${({ fullWidth }) => commonButtonStyles(fullWidth)}
   color: ${COLORS.white};
   background: ${COLORS.pink};
   border-radius: 12px;
@@ -46,7 +50,7 @@ export const ButtonStyle = styled.button<StyledType>`
 `;
 
 export const GhostButtonStyle = styled.button<StyledType>`
-  ${commonButtonStyles}
+  ${({ fullWidth }) => commonButtonStyles(fullWidth)}
   color: ${COLORS.black};
   background: transparent;
   border-radius: 12px;
@@ -78,6 +82,8 @@ export interface ButtonType extends HTMLAttributes<HTMLButtonElement> {
   type?: keyof typeof TYPES;
   htmlType?: 'button' | 'submit' | 'reset';
   onClick?: React.MouseEventHandler;
+  fullWidth?: boolean;
+  as?: string;
 }
 
 const Button: FC<ButtonType> = ({ type, htmlType, ...props }) => {

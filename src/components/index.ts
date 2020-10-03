@@ -9,10 +9,13 @@ export { default as BlockTitle } from './BlockTitle';
 export { default as ParallaxBackground } from './ParallaxBackground';
 export { default as Cube } from './Cube';
 export { default as Checkbox } from './Checkbox';
+export { default as CheckboxGroup } from './CheckboxGroup';
 export { default as Isotope } from './Isotope';
 export { default as ScrollContainer } from './ScrollContainer';
 export { default as Button } from './Button';
 export { default as ReviewRating } from './ReviewRating';
+export { default as Input } from './Input';
+export { default as Textarea } from './Textarea';
 
 export type { LinkType } from './Link';
 export type { ButtonType } from './Button';

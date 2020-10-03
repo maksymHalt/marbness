@@ -1,3 +1,4 @@
+import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 
 interface Props {
@@ -7,6 +8,8 @@ interface Props {
   align?: 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch';
   /** Size of gap between placed elements, default: 10 */
   size?: number;
+  /** Should stretch content by full width, default: false */
+  stretchContent?: boolean;
 }
 
 const Space = styled.div<Props>`
@@ -17,6 +20,14 @@ const Space = styled.div<Props>`
   > :nth-of-type(n + 2) {
     margin-left: ${({ size }) => size || 10}px;
   }
+
+  ${({ stretchContent }) =>
+    stretchContent &&
+    css`
+      > * {
+        flex-grow: 1;
+      }
+    `}
 `;
 
 export default Space;

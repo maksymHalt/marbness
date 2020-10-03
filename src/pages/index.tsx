@@ -4,6 +4,7 @@ import ServicesBlock from '@src/containers/ServicesBlock';
 import ReviewBlock from '@src/containers/ReviewBlock';
 import WorksBlock from '@src/containers/WorksBlock';
 import TestimonialsBlock from '@src/containers/TestimonialsBlock';
+import HireUsSection from '@src/containers/HireUsSection';
 
 const Home: FC = () => {
   return (
@@ -13,6 +14,7 @@ const Home: FC = () => {
       <ReviewBlock />
       <WorksBlock />
       <TestimonialsBlock />
+      <HireUsSection />
     </>
   );
 };

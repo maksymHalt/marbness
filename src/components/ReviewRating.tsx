@@ -41,7 +41,7 @@ const StarList = styled.div<StarListProps>`
     height: ${STAR_SIZE}px;
     flex-shrink: 0;
 
-    &:nth-child(n + 2) {
+    &:nth-of-type(n + 2) {
       margin-left: ${GAP_SIZE}px;
     }
   }

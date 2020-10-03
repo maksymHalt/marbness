@@ -43,7 +43,7 @@ const VisiblePart = styled.div`
 interface Props {
   className?: string;
   name?: string;
-  onChange: React.ChangeEventHandler<HTMLInputElement>;
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
 }
 
 const Checkbox: FC<Props> = ({ children, className, name, onChange }) => {

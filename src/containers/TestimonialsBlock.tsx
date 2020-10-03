@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import styled from '@emotion/styled';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { chunk } from 'lodash';
@@ -31,6 +31,11 @@ const testimonials = new Array(7)
 
 const TestimonialsBlock: FC = () => {
   const [swiper, setSwiper] = useState(null);
+
+  // To demonstrate the visualization of a fractional score
+  useEffect(() => {
+    testimonials.forEach((item) => (item.score = +(Math.random() + 4).toFixed(1)));
+  }, []);
 
   return (
     <Container>
@@ -115,8 +120,8 @@ const Item = styled.div`
   display: inline-block;
   max-width: 470px;
 
-  &:nth-child(4n + 3),
-  &:nth-child(4n + 4) {
+  &:nth-of-type(4n + 3),
+  &:nth-of-type(4n + 4) {
     margin-top: 40px;
     border-top: 1px solid ${COLORS.lightestGrey};
     padding-top: 40px;

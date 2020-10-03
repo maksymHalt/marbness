@@ -160,7 +160,7 @@ const FeatureItem = styled.li`
     margin-right: 8px;
     color: ${COLORS.pinkSolid};
   }
-  &:nth-child(n + 2) {
+  &:nth-of-type(n + 2) {
     margin-top: 12px;
   }
 `;
