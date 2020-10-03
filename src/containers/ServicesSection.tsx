@@ -42,7 +42,7 @@ const servicesData = [
   }
 ];
 
-const ServicesBlock: FC = () => (
+const ServicesSection: FC = () => (
   <Container>
     <ParallaxBackground>
       <Cube1 />
@@ -72,7 +72,7 @@ const ServicesBlock: FC = () => (
   </Container>
 );
 
-export default ServicesBlock;
+export default ServicesSection;
 
 const Container = styled.section`
   position: relative;

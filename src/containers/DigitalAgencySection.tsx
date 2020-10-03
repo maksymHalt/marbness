@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import styled from '@emotion/styled';
 import { Title, Text, Link, WidthContainer, Space, BlockTitle } from '@src/components';
 
-const DigitalAgencyBlock: FC = () => (
+const DigitalAgencySection: FC = () => (
   <Container>
     <LeftColumn>
       <BlockTitle>Digital agency</BlockTitle>
@@ -26,7 +26,7 @@ const DigitalAgencyBlock: FC = () => (
   </Container>
 );
 
-export default DigitalAgencyBlock;
+export default DigitalAgencySection;
 
 const Container = styled(WidthContainer.withComponent('section'))`
   margin-top: 60px;

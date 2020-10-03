@@ -29,7 +29,7 @@ const testimonials = new Array(7)
   })
   .map((item, id) => ({ ...item, id }));
 
-const TestimonialsBlock: FC = () => {
+const TestimonialsSection: FC = () => {
   const [swiper, setSwiper] = useState(null);
 
   // To demonstrate the visualization of a fractional score
@@ -85,7 +85,7 @@ const TestimonialsBlock: FC = () => {
   );
 };
 
-export default TestimonialsBlock;
+export default TestimonialsSection;
 
 const Container = styled.section`
   position: relative;

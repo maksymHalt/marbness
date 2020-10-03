@@ -116,7 +116,7 @@ worksData.content = worksData.content.map((item, index) => ({
   ...item
 }));
 
-const WorksBlock: FC = () => {
+const WorksSection: FC = () => {
   const [filterBy, setFilterBy] = useState([]);
   const onFilterChange = useCallback(({ target: { value } }) => {
     setFilterBy(value);
@@ -166,7 +166,7 @@ const WorksBlock: FC = () => {
   );
 };
 
-export default WorksBlock;
+export default WorksSection;
 
 const Container = styled.section`
   position: relative;

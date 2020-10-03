@@ -1,19 +1,19 @@
 import React, { FC } from 'react';
-import DigitalAgencyBlock from '@src/containers/DigitalAgencyBlock';
-import ServicesBlock from '@src/containers/ServicesBlock';
-import ReviewBlock from '@src/containers/ReviewBlock';
-import WorksBlock from '@src/containers/WorksBlock';
-import TestimonialsBlock from '@src/containers/TestimonialsBlock';
+import DigitalAgencySection from '@src/containers/DigitalAgencySection';
+import ServicesSection from '@src/containers/ServicesSection';
+import ReviewSection from '@src/containers/ReviewSection';
+import WorksSection from '@src/containers/WorksSection';
+import TestimonialsSection from '@src/containers/TestimonialsSection';
 import HireUsSection from '@src/containers/HireUsSection';
 
 const Home: FC = () => {
   return (
     <>
-      <DigitalAgencyBlock />
-      <ServicesBlock />
-      <ReviewBlock />
-      <WorksBlock />
-      <TestimonialsBlock />
+      <DigitalAgencySection />
+      <ServicesSection />
+      <ReviewSection />
+      <WorksSection />
+      <TestimonialsSection />
       <HireUsSection />
     </>
   );

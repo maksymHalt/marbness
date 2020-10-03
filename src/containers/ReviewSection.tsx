@@ -4,7 +4,7 @@ import { Text, WidthContainer, ParallaxBackground, Quote, Cube } from '@src/comp
 import { COLORS, FONTS } from '@src/styles';
 import { addProps } from '@src/utils';
 
-const ReviewBlock: FC = () => (
+const ReviewSection: FC = () => (
   <Container>
     <ParallaxBackground>
       <Cube1 />
@@ -29,7 +29,7 @@ const ReviewBlock: FC = () => (
   </Container>
 );
 
-export default ReviewBlock;
+export default ReviewSection;
 
 const Container = styled.section`
   position: relative;
