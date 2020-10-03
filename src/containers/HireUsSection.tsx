@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import styled from '@emotion/styled';
 import { WidthContainer, ParallaxBackground, Cube } from '@src/components';
-import { addProps } from '@src/utils';
+import { addProps, mq } from '@src/utils';
 import HireUsBlock from './HireUsBlock';
 import ContactsBlock from './ContactsBlock';
 
@@ -28,7 +28,6 @@ export default HireUsSection;
 const Container = styled.section`
   position: relative;
   padding-top: 125px;
-  padding-bottom: 95px;
 `;
 
 const Cube1 = styled(addProps(Cube, { size: 102, color: 'saturated' }))`
@@ -51,7 +50,15 @@ const Content = styled(WidthContainer)`
 
 const LeftHalf = styled.div`
   width: 50%;
+
+  ${mq('T')} {
+    width: 35%;
+  }
 `;
 const RightHalf = styled.div`
   width: 50%;
+
+  ${mq('T')} {
+    width: 65%;
+  }
 `;

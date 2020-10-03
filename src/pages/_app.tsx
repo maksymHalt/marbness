@@ -45,6 +45,7 @@ const App: FC<Props> = ({ Component, pageProps }) => {
     <Provider store={store}>
       <GlobalStyles />
       <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Marbness</title>
         <link
           rel="apple-touch-icon"

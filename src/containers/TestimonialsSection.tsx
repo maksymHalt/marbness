@@ -15,7 +15,7 @@ import {
   Text
 } from '@src/components';
 import { COLORS } from '@src/styles';
-import { addProps } from '@src/utils';
+import { addProps, mq } from '@src/utils';
 
 const testimonials = new Array(7)
   .fill({
@@ -119,6 +119,10 @@ const List = styled.div`
 const Item = styled.div`
   display: inline-block;
   max-width: 470px;
+
+  ${mq('T')} {
+    max-width: 350px;
+  }
 
   &:nth-of-type(4n + 3),
   &:nth-of-type(4n + 4) {

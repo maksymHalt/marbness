@@ -2,6 +2,7 @@ import React, { FC, HTMLAttributes } from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 import { FONTS } from '@src/styles';
+import { mq } from '@src/utils';
 
 const commonTitleStyles = css`
   margin: 0;
@@ -12,7 +13,11 @@ const HERO = styled.h1`
   ${commonTitleStyles}
   font-weight: 700;
   font-size: 88px;
-  line-height: 104px;
+  line-height: 1.2;
+
+  ${mq('T')} {
+    font-size: 72px;
+  }
 `;
 const H1 = styled.h2`
   ${commonTitleStyles}
@@ -31,6 +36,10 @@ const H3 = styled.h4`
   font-weight: 500;
   font-size: 24px;
   line-height: 1.4;
+
+  ${mq('T')} {
+    font-size: 22px;
+  }
 `;
 const H4 = styled.h5`
   ${commonTitleStyles}

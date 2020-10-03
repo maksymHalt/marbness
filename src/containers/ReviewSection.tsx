@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import styled from '@emotion/styled';
 import { Text, WidthContainer, ParallaxBackground, Quote, Cube } from '@src/components';
 import { COLORS, FONTS } from '@src/styles';
-import { addProps } from '@src/utils';
+import { addProps, mq } from '@src/utils';
 
 const ReviewSection: FC = () => (
   <Container>
@@ -38,6 +38,10 @@ const Container = styled.section`
   align-items: center;
   min-height: 900px;
   padding: 50px 0;
+
+  ${mq('T')} {
+    min-height: 600px;
+  }
 `;
 
 const Cube1 = styled(addProps(Cube, { size: 732, color: 'faded' }))`

@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import styled from '@emotion/styled';
 import { Logotype, WidthContainer, Link, Space, LinkType } from '@src/components';
+import { mq } from '@src/utils';
 
 interface LinkDataItem extends LinkType {
   label: string;
@@ -20,7 +21,7 @@ const Header: FC = () => (
       <Link href="/">
         <Logotype />
       </Link>
-      <Navigation size={60}>
+      <Navigation>
         {navList.map(({ label, ...props }) => (
           <Link key={label} {...props}>
             {label}
@@ -42,4 +43,12 @@ const Content = styled(WidthContainer)`
   align-items: center;
 `;
 
-const Navigation = Space.withComponent('nav');
+const Navigation = styled(Space.withComponent('nav'))`
+  > :nth-of-type(n + 2) {
+    margin-left: 60px;
+
+    ${mq('T')} {
+      margin-left: 25px;
+    }
+  }
+`;

@@ -49,5 +49,5 @@ const Description = styled(Text)`
 `;
 const Photo = styled.img`
   border-radius: 24px;
-  height: 552px;
+  width: 100%;
 `;

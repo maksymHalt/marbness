@@ -9,7 +9,7 @@ import {
   Cube
 } from '@src/components';
 import { COLORS } from '@src/styles';
-import { addProps } from '@src/utils';
+import { addProps, mq } from '@src/utils';
 
 const servicesData = [
   {
@@ -101,14 +101,37 @@ const ServiceList = styled.div`
   display: flex;
 `;
 const ServiceItem = styled.div`
+  position: relative;
   flex: 0 0 33.3333%;
   padding: 32px;
   border-radius: 12px;
-  transition: background 0.2s, color 0.2s;
+  transition: color 0.2s;
+
+  ${mq('T')} {
+    padding: 22px;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    background: ${COLORS.violet};
+    opacity: 0;
+    transition: opacity 0.2s;
+    border-radius: inherit;
+  }
 
   &:hover {
-    background: ${COLORS.violet};
     color: ${COLORS.white};
+
+    &::before {
+      opacity: 1;
+    }
   }
 `;
 const Box = styled.div`

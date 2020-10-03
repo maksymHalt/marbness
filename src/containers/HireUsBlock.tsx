@@ -11,7 +11,7 @@ import {
   Textarea,
   Button
 } from '@src/components';
-import { addProps, getFormikFieldPropsGetter } from '@src/utils';
+import { addProps, getFormikFieldPropsGetter, mq } from '@src/utils';
 
 const checkboxGroupDataList = [
   { name: 'interfaceDesign', label: 'Interface Design' },
@@ -81,6 +81,9 @@ export default HireUsBlock;
 
 const Form = styled.form`
   margin-top: 64px;
+  ${mq('T')} {
+    margin-top: 40px;
+  }
 `;
 
 const FormLine = styled(addProps(Space, { size: 24, stretchContent: true }))`

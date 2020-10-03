@@ -2,6 +2,7 @@ import React, { FC, HTMLAttributes } from 'react';
 import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 import { COLORS, FONTS } from '@src/styles';
+import { mq } from '@src/utils';
 
 const commonButtonStyles = (fullWidth) => css`
   cursor: pointer;
@@ -16,6 +17,10 @@ const commonButtonStyles = (fullWidth) => css`
   css`
     width: 100%;
   `}
+
+  ${mq('T')} {
+    padding: 12px 42px;
+  }
 `;
 
 type StyledType = { as?: string; fullWidth?: boolean };

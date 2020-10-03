@@ -3,7 +3,6 @@ import NextLink from 'next/link';
 import styled from '@emotion/styled';
 import { COLORS } from '@src/styles';
 import { ButtonStyle, GhostButtonStyle } from './Button';
-import { addProps } from '@src/utils';
 
 const A = styled.a`
   cursor: pointer;
@@ -15,13 +14,9 @@ const A = styled.a`
   }
 `;
 
-const Button = (addProps(ButtonStyle, { as: 'a' }) as unknown) as FC<
-  HTMLAttributes<HTMLAnchorElement>
->;
+const Button = ButtonStyle.withComponent('a');
 
-const GhostButton = (addProps(GhostButtonStyle, { as: 'a' }) as unknown) as FC<
-  HTMLAttributes<HTMLAnchorElement>
->;
+const GhostButton = GhostButtonStyle.withComponent('a');
 
 const TYPES = {
   default: A,

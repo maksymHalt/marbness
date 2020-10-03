@@ -16,7 +16,7 @@ import {
   ContentType
 } from '@src/components';
 import { COLORS } from '@src/styles';
-import { addProps } from '@src/utils';
+import { addProps, mq } from '@src/utils';
 import animateScrollTo from 'animated-scroll-to';
 
 const CELL_WIDTH = 264;
@@ -196,6 +196,10 @@ const ContentList = styled.div<ContentType>`
   grid-template: repeat(2, 1fr) / repeat(auto-fit, ${CELL_WIDTH}px);
   grid-gap: ${GRID_GAP}px;
   z-index: 0;
+
+  ${mq('T')} {
+    padding: 0 calc((100% - 768px) / 2);
+  }
 `;
 
 const ScrollerWrapper = styled.div`

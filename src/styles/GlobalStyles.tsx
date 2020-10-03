@@ -8,6 +8,7 @@ const GlobalStyles: FC = () => (
     {fontFaces}
     <Global
       styles={css`
+        html,
         body {
           font-family: ${FONTS.karla};
           color: ${COLORS.black};

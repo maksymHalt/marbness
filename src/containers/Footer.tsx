@@ -11,7 +11,7 @@ import {
 } from '@src/components';
 import { COLORS } from '@src/styles';
 import styled from '@emotion/styled';
-import { addProps } from '@src/utils';
+import { addProps, mq } from '@src/utils';
 
 interface LinkDataItem extends LinkType {
   label: string;
@@ -115,6 +115,10 @@ const MainPart = styled.div`
   padding-bottom: 30px;
   border-bottom: 1px solid #ebebee;
   margin-bottom: 37px;
+
+  ${mq('T')} {
+    padding-top: 105px;
+  }
 `;
 
 const FooterItem = styled(Text)`
@@ -129,6 +133,10 @@ const LogoColumn = styled.div`
   flex-grow: 5;
   flex-shrink: 0;
   flex-basis: 0;
+
+  ${mq('T')} {
+    flex-grow: 3;
+  }
 `;
 const CompanyColumn = styled.div`
   flex-grow: 2;

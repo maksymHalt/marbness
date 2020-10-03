@@ -17,8 +17,8 @@ const Space = styled.div<Props>`
   flex-direction: ${({ direction }) => direction || 'row'};
   align-items: ${({ align }) => align || 'center'};
 
-  > :nth-of-type(n + 2) {
-    margin-left: ${({ size }) => size || 10}px;
+  > :nth-last-of-type(n + 2) {
+    margin-right: ${({ size }) => size || 10}px;
   }
 
   ${({ stretchContent }) =>

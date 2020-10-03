@@ -33,15 +33,22 @@ const CheckboxGroup: FC<Props> = ({ className, name, label, dataList, onChange }
   return (
     <Wrapper className={className}>
       {label && <Label>{label}</Label>}
-      <Space>
+      <GroupList>
         {dataList.map(({ name, label }) => (
-          <Checkbox name={name} key={name} onChange={onCheckboxChange}>
+          <GroupItem name={name} key={name} onChange={onCheckboxChange}>
             {label}
-          </Checkbox>
+          </GroupItem>
         ))}
-      </Space>
+      </GroupList>
     </Wrapper>
   );
 };
 
 export default CheckboxGroup;
+
+const GroupList = styled(Space)`
+  flex-wrap: wrap;
+`;
+const GroupItem = styled(Checkbox)`
+  margin-bottom: 8px;
+`;
