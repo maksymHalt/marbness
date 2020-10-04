@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
-import { WidthContainer } from '@src/components';
+import ServicesSection from '@src/containers/ServicesSection';
 
 const Services: FC = () => {
-  return <WidthContainer>Services content</WidthContainer>;
+  return <ServicesSection />;
 };
 
 export default Services;

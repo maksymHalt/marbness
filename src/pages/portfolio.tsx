@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
-import { WidthContainer } from '@src/components';
+import WorksSection from '@src/containers/WorksSection';
 
 const Portfolio: FC = () => {
-  return <WidthContainer>Portfolio content</WidthContainer>;
+  return <WorksSection />;
 };
 
 export default Portfolio;

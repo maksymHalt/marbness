@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
-import { WidthContainer } from '@src/components';
+import TestimonialsSection from '@src/containers/TestimonialsSection';
 
 const AboutUs: FC = () => {
-  return <WidthContainer>About us content</WidthContainer>;
+  return <TestimonialsSection />;
 };
 
 export default AboutUs;

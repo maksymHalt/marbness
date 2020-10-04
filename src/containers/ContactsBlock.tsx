@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 import {
   Title,
@@ -10,7 +11,7 @@ import {
   Facebook
 } from '@src/components';
 import { COLORS } from '@src/styles';
-import { addProps } from '@src/utils';
+import { addProps, mq } from '@src/utils';
 
 const socialMediaLinks = [
   {
@@ -31,8 +32,12 @@ const socialMediaLinks = [
   }
 ];
 
-const ContactsBlock: FC = () => (
-  <>
+interface Props {
+  row?: boolean;
+}
+
+const ContactsBlock: FC<Props> = ({ row }) => (
+  <Wrapper row={row}>
     <InfoItem>
       <GreyTitle level={4}>Email</GreyTitle>
       <InfoText>
@@ -70,10 +75,36 @@ const ContactsBlock: FC = () => (
         </SocialMediaList>
       </InfoText>
     </InfoItem>
-  </>
+  </Wrapper>
 );
 
 export default ContactsBlock;
+
+const Wrapper = styled.div<Props>`
+  display: flex;
+  flex-direction: column;
+
+  ${({ row }) =>
+    row &&
+    css`
+      flex-direction: row;
+      justify-content: space-between;
+
+      ${InfoItem}:nth-of-type(n + 2) {
+        margin-top: 0;
+        margin-left: 30px;
+      }
+
+      ${mq('M')} {
+        flex-direction: column;
+
+        ${InfoItem}:nth-of-type(n + 2) {
+          margin-left: 0;
+          margin-top: 30px;
+        }
+      }
+    `}
+`;
 
 const InfoText = styled(addProps(Text, { as: 'div', type: 'bodyBig1' }))``;
 
