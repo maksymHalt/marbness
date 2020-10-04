@@ -21,6 +21,10 @@ const commonButtonStyles = (fullWidth) => css`
   ${mq('T')} {
     padding: 12px 42px;
   }
+
+  ${mq('M')} {
+    padding: 8px 28px;
+  }
 `;
 
 type StyledType = { as?: string; fullWidth?: boolean };

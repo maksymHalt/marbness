@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import styled from '@emotion/styled';
 import { Title, Text, Link, WidthContainer, Space, BlockTitle } from '@src/components';
+import { mq } from '@src/utils';
 
 const DigitalAgencySection: FC = () => (
   <Container>
@@ -32,6 +33,14 @@ const Container = styled(WidthContainer.withComponent('section'))`
   margin-top: 60px;
   margin-bottom: 60px;
   display: flex;
+
+  ${mq('M')} {
+    flex-direction: column-reverse;
+
+    > :nth-of-type(n + 2) {
+      margin-bottom: 20px;
+    }
+  }
 `;
 const LeftColumn = styled.div`
   flex: 1 0 0;
@@ -46,6 +55,10 @@ const RightColumn = styled.div`
 `;
 const Description = styled(Text)`
   margin: 16px 120px 40px 0;
+
+  ${mq('M')} {
+    margin-right: 0;
+  }
 `;
 const Photo = styled.img`
   border-radius: 24px;

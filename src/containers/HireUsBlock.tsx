@@ -93,4 +93,14 @@ const FormLine = styled(addProps(Space, { size: 24, stretchContent: true }))`
   > * {
     flex-basis: 0;
   }
+
+  ${mq('M')} {
+    flex-direction: column;
+    align-items: stretch;
+
+    > :nth-last-of-type(n + 2) {
+      margin-right: 0;
+      margin-bottom: 24px;
+    }
+  }
 `;

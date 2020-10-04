@@ -99,6 +99,10 @@ const Content = styled(WidthContainer)`
 const ServiceList = styled.div`
   margin-top: 100px;
   display: flex;
+
+  ${mq('M')} {
+    flex-direction: column;
+  }
 `;
 const ServiceItem = styled.div`
   position: relative;

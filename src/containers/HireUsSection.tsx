@@ -46,19 +46,27 @@ const Cube3 = styled(addProps(Cube, { size: 532, color: 'faded' }))`
 const Content = styled(WidthContainer)`
   position: relative;
   display: flex;
+
+  ${mq('M')} {
+    flex-direction: column;
+
+    > :nth-of-type(n + 2) {
+      margin-top: 150px;
+    }
+  }
 `;
 
 const LeftHalf = styled.div`
-  width: 50%;
+  flex-basis: 50%;
 
   ${mq('T')} {
-    width: 35%;
+    flex-basis: 35%;
   }
 `;
 const RightHalf = styled.div`
-  width: 50%;
+  flex-basis: 50%;
 
   ${mq('T')} {
-    width: 65%;
+    flex-basis: 65%;
   }
 `;

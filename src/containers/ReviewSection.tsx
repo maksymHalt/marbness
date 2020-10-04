@@ -80,6 +80,10 @@ const ReviewText = styled(Text)`
   text-align: center;
   margin: 32px 0 24px;
   max-width: 744px;
+
+  ${mq('M')} {
+    font-size: 26px;
+  }
 `;
 
 const ReviewCompany = styled.div`

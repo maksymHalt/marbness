@@ -18,6 +18,10 @@ const HERO = styled.h1`
   ${mq('T')} {
     font-size: 72px;
   }
+
+  ${mq('M')} {
+    font-size: 62px;
+  }
 `;
 const H1 = styled.h2`
   ${commonTitleStyles}

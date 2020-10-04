@@ -119,44 +119,62 @@ const MainPart = styled.div`
   ${mq('T')} {
     padding-top: 105px;
   }
-`;
 
-const FooterItem = styled(Text)`
-  margin-bottom: 24px;
+  ${mq('M')} {
+    flex-direction: column;
 
-  &:last-child {
-    margin-bottom: 0;
+    > :nth-last-of-type(n + 2) {
+      margin-bottom: 30px;
+    }
   }
 `;
 
-const LogoColumn = styled.div`
-  flex-grow: 5;
+const FooterItem = styled(Text)`
+  &:nth-last-of-type(n + 2) {
+    margin-bottom: 24px;
+
+    ${mq('M')} {
+      margin-bottom: 8px;
+    }
+  }
+`;
+
+const Column = styled.div`
+  flex-grow: 2;
   flex-shrink: 0;
   flex-basis: 0;
+
+  ${mq('M')} {
+    display: flex;
+    flex-wrap: wrap;
+
+    > :nth-last-of-type(n + 2) {
+      margin-right: 10px;
+    }
+  }
+`;
+
+const LogoColumn = styled(Column)`
+  flex-grow: 5;
 
   ${mq('T')} {
     flex-grow: 3;
   }
 `;
-const CompanyColumn = styled.div`
-  flex-grow: 2;
-  flex-shrink: 0;
-  flex-basis: 0;
-`;
-const FollowColumn = styled.div`
-  flex-grow: 2;
-  flex-shrink: 0;
-  flex-basis: 0;
-`;
-const ContactColumn = styled.div`
+const CompanyColumn = styled(Column)``;
+const FollowColumn = styled(Column)``;
+const ContactColumn = styled(Column)`
   flex-grow: 3;
-  flex-shrink: 0;
-  flex-basis: 0;
 `;
 
 const FooterTitle = styled(Title)`
   margin-bottom: 32px;
   color: ${COLORS.grey};
+
+  ${mq('M')} {
+    flex-basis: 100%;
+    margin-bottom: 10px;
+  }
 `;
 
 const ContactText = styled(Text)`

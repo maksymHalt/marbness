@@ -41,6 +41,10 @@ const Content = styled(WidthContainer)`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  ${mq('M')} {
+    flex-direction: column;
+  }
 `;
 
 const Navigation = styled(Space.withComponent('nav'))`
@@ -49,6 +53,15 @@ const Navigation = styled(Space.withComponent('nav'))`
 
     ${mq('T')} {
       margin-left: 25px;
+    }
+  }
+
+  ${mq('M')} {
+    flex-wrap: wrap;
+    justify-content: center;
+
+    > * {
+      margin-top: 10px;
     }
   }
 `;

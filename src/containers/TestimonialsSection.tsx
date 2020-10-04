@@ -15,7 +15,7 @@ import {
   Text
 } from '@src/components';
 import { COLORS } from '@src/styles';
-import { addProps, mq } from '@src/utils';
+import { addProps, BREAKPOINTS, mq, useWindowResize } from '@src/utils';
 
 const testimonials = new Array(7)
   .fill({
@@ -37,6 +37,12 @@ const TestimonialsSection: FC = () => {
     testimonials.forEach((item) => (item.score = +(Math.random() + 4).toFixed(1)));
   }, []);
 
+  const [slidesPerView, setSlidesPerView] = useState(1);
+
+  useWindowResize(() => {
+    setSlidesPerView(window.innerWidth > BREAKPOINTS.M ? 4 : 1);
+  });
+
   return (
     <Container>
       <ParallaxBackground>
@@ -53,7 +59,7 @@ const TestimonialsSection: FC = () => {
           allowTouchMove={false}
           tag={(SwiperContainer as unknown) as string}
         >
-          {chunk(testimonials, 4).map((slideList, i) => (
+          {chunk(testimonials, slidesPerView).map((slideList, i) => (
             <SwiperSlide key={i}>
               <List>
                 {slideList.map(({ id, score, text, avatar, author, position }) => (

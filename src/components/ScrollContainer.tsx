@@ -4,7 +4,7 @@ import Scrollbars from 'react-scrollbars-custom';
 import { COLORS } from '@src/styles';
 
 interface Props {
-  height: number;
+  className?: string;
   getScroller?: (el: HTMLElement) => void;
 }
 
@@ -25,7 +25,7 @@ const ThumbHorizontal = ({ elementRef, style, ...restProps }) => (
   />
 );
 
-const ScrollContainer: FC<Props> = ({ children, height, getScroller }) => {
+const ScrollContainer: FC<Props> = ({ children, className, getScroller }) => {
   const Scroller = ({ elementRef, ...restProps }) => (
     <DragScroll
       {...restProps}
@@ -44,7 +44,7 @@ const ScrollContainer: FC<Props> = ({ children, height, getScroller }) => {
 
   return (
     <Scrollbars
-      style={{ height }}
+      className={className}
       trackXProps={{ renderer: TrackHorizontal }}
       scrollerProps={{ renderer: Scroller }}
       thumbXProps={{ renderer: ThumbHorizontal }}

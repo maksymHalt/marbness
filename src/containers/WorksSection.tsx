@@ -22,6 +22,10 @@ import animateScrollTo from 'animated-scroll-to';
 const CELL_WIDTH = 264;
 const CELL_HEIGHT = 227;
 const GRID_GAP = 24;
+const SCROLLBAR_PADDING = 18;
+const CELL_WIDTH_M = 164;
+const CELL_HEIGHT_M = 127;
+const GRID_GAP_M = 14;
 
 type RenderItemType = { id: string; bg: string; size: number[]; css?: SerializedStyles };
 
@@ -33,6 +37,11 @@ const RenderItemWrapper = styled.div<RenderItemType>`
   width: ${({ size: [w] }) => w * CELL_WIDTH + (w - 1) * GRID_GAP}px;
   height: ${({ size: [, h] }) => h * CELL_HEIGHT + (h - 1) * GRID_GAP}px;
   border-radius: 12px;
+
+  ${mq('M')} {
+    width: ${({ size: [w] }) => w * CELL_WIDTH_M + (w - 1) * GRID_GAP_M}px;
+    height: ${({ size: [, h] }) => h * CELL_HEIGHT_M + (h - 1) * GRID_GAP_M}px;
+  }
 `;
 
 const renderItem = (props: RenderItemType) => (
@@ -45,6 +54,21 @@ const Divider = styled.hr`
   opacity: 0.3;
   width: 100%;
   margin: 20px 0 auto;
+
+  ${mq('M')} {
+    margin-top: 5px;
+  }
+`;
+
+const ItemTitle = styled(Title)`
+  ${mq('M')} {
+    font-size: 12px;
+  }
+`;
+const ItemText = styled(Text)`
+  ${mq('M')} {
+    font-size: 10px;
+  }
 `;
 
 const renderTextItem = (props: RenderItemType) => (
@@ -57,11 +81,15 @@ const renderTextItem = (props: RenderItemType) => (
       display: flex;
       flex-direction: column;
       padding: 24px;
+
+      ${mq('M')} {
+        padding: 16px;
+      }
     `}
   >
-    <Title level={3}>Complex brand creation & visualization</Title>
+    <ItemTitle level={3}>Complex brand creation & visualization</ItemTitle>
     <Divider />
-    <Text weight="bold">AirCraft LTD</Text>
+    <ItemText weight="bold">AirCraft LTD</ItemText>
   </RenderItemWrapper>
 );
 
@@ -133,17 +161,14 @@ const WorksSection: FC = () => {
         <Title level={1}>Latest projects</Title>
         <FilterGroup dataList={worksData.filters} onChange={onFilterChange} />
       </Content>
-      <ScrollContainer
-        height={(CELL_HEIGHT + GRID_GAP) * 2}
-        getScroller={(el) => (scrollerRef.current = el)}
-      >
+      <ScrollWrapper getScroller={(el) => (scrollerRef.current = el)}>
         <Isotope
           data={worksData.content}
           filterBy={filterBy}
           render={({ renderItem, ...props }) => renderItem(props)}
           Component={ContentList}
         />
-      </ScrollContainer>
+      </ScrollWrapper>
       <Content>
         <ScrollerWrapper>
           <ScrollerToEnd
@@ -187,6 +212,14 @@ const FilterGroup = styled(CheckboxGroup)`
   margin: 40px 0 24px;
 `;
 
+const ScrollWrapper = styled(ScrollContainer)`
+  height: ${CELL_HEIGHT * 2 + GRID_GAP + SCROLLBAR_PADDING}px !important;
+
+  ${mq('M')} {
+    height: ${CELL_HEIGHT_M * 2 + GRID_GAP_M + SCROLLBAR_PADDING}px !important;
+  }
+`;
+
 const ContentList = styled.div<ContentType>`
   position: relative;
   height: ${CELL_HEIGHT * 2 + GRID_GAP}px;
@@ -199,6 +232,14 @@ const ContentList = styled.div<ContentType>`
 
   ${mq('T')} {
     padding: 0 calc((100% - 768px) / 2);
+  }
+
+  ${mq('M')} {
+    padding: 0 calc((100% - 320px) / 2);
+
+    grid-template: repeat(2, 1fr) / repeat(auto-fit, ${CELL_WIDTH_M}px);
+    height: ${CELL_HEIGHT_M * 2 + GRID_GAP_M}px;
+    grid-gap: ${GRID_GAP_M}px;
   }
 `;
 
