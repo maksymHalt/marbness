@@ -77,7 +77,7 @@ const Footer: FC = () => {
           </ContactColumn>
         </MainPart>
         <CopyrightNotice type="bodyBig1">
-          North Unicorn Lab - All Right Reserved
+          Tecnologica - All Right Reserved
         </CopyrightNotice>
       </Content>
     </Container>
