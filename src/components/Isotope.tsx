@@ -49,7 +49,7 @@ const Isotope: FC<Props> = ({ data, filterBy, render, Component, duration = 300 
 
   useWindowResize(updatePositions);
 
-  useEffect(updatePositions, [updatePositions]);
+  useEffect(updatePositions, [updatePositions, filterBy]);
 
   let newData = data;
   if (filterBy.length) {
