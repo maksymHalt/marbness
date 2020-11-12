@@ -13,7 +13,9 @@ import {
   ScrollContainer,
   ArrowRight,
   Button,
-  ContentType
+  ContentType,
+  Image,
+  ImageType
 } from '@src/components';
 import { COLORS } from '@src/styles';
 import { addProps, mq } from '@src/utils';
@@ -27,11 +29,21 @@ const CELL_WIDTH_M = 164;
 const CELL_HEIGHT_M = 127;
 const GRID_GAP_M = 14;
 
-type RenderItemType = { id: string; bg: string; size: number[]; css?: SerializedStyles };
+interface RenderItemType {
+  id: string;
+  bg: string;
+  size: number[];
+  css: SerializedStyles;
+}
 
-const RenderItemWrapper = styled.div<RenderItemType>`
-  background: ${({ bg }) => bg};
-  background-size: cover;
+interface RenderItemWrapperType extends ImageType {
+  id: string;
+  size: number[];
+  css?: SerializedStyles;
+}
+
+const RenderItemImageWrapper = styled(Image)<RenderItemWrapperType>`
+  object-fit: cover;
   grid-column-end: span ${({ size: [w] }) => w};
   grid-row-end: span ${({ size: [, h] }) => h};
   width: ${({ size: [w] }) => w * CELL_WIDTH + (w - 1) * GRID_GAP}px;
@@ -44,8 +56,21 @@ const RenderItemWrapper = styled.div<RenderItemType>`
   }
 `;
 
-const renderItem = (props: RenderItemType) => (
-  <RenderItemWrapper key={props.id} {...props} />
+const RenderItemWrapper = styled.div<Partial<RenderItemWrapperType>>`
+  grid-column-end: span ${({ size: [w] }) => w};
+  grid-row-end: span ${({ size: [, h] }) => h};
+  width: ${({ size: [w] }) => w * CELL_WIDTH + (w - 1) * GRID_GAP}px;
+  height: ${({ size: [, h] }) => h * CELL_HEIGHT + (h - 1) * GRID_GAP}px;
+  border-radius: 12px;
+
+  ${mq('M')} {
+    width: ${({ size: [w] }) => w * CELL_WIDTH_M + (w - 1) * GRID_GAP_M}px;
+    height: ${({ size: [, h] }) => h * CELL_HEIGHT_M + (h - 1) * GRID_GAP_M}px;
+  }
+`;
+
+const renderItem = ({ bg, ...props }: RenderItemType) => (
+  <RenderItemImageWrapper key={props.id} src={bg} {...props} />
 );
 
 const Divider = styled.hr`
@@ -71,12 +96,13 @@ const ItemText = styled(Text)`
   }
 `;
 
-const renderTextItem = (props: RenderItemType) => (
+const renderTextItem = ({ bg, ...props }: RenderItemType) => (
   <RenderItemWrapper
     key={props.id}
     {...props}
     css={css`
       ${props.css || ''}
+      background: ${bg};
       color: ${COLORS.white};
       display: flex;
       flex-direction: column;
@@ -102,13 +128,13 @@ const worksData = {
   ],
   content: [
     {
-      bg: 'url(./img/project-1.jpg)',
+      bg: 'img/project-1.jpg',
       size: [2, 2],
       renderItem,
       tags: ['interfaceDesign', 'development']
     },
     {
-      bg: 'url(./img/project-2.jpg)',
+      bg: 'img/project-2.jpg',
       size: [2, 1],
       renderItem,
       tags: ['interfaceDesign', 'brandIdentity']
@@ -120,19 +146,19 @@ const worksData = {
       tags: ['uxAudit', 'development']
     },
     {
-      bg: 'url(./img/project-3.jpg)',
+      bg: 'img/project-3.jpg',
       size: [1, 1],
       renderItem,
       tags: ['brandIdentity', 'uxAudit']
     },
     {
-      bg: 'url(./img/project-4.jpg)',
+      bg: 'img/project-4.jpg',
       size: [1, 1],
       renderItem,
       tags: ['interfaceDesign', 'uxAudit']
     },
     {
-      bg: 'url(./img/project-5.jpg)',
+      bg: 'img/project-5.jpg',
       size: [2, 1],
       renderItem,
       tags: ['brandIdentity', 'development']

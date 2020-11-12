@@ -1,6 +1,14 @@
 import React, { FC } from 'react';
 import styled from '@emotion/styled';
-import { Title, Text, Link, WidthContainer, Space, BlockTitle } from '@src/components';
+import {
+  Title,
+  Text,
+  Link,
+  WidthContainer,
+  Space,
+  BlockTitle,
+  Image
+} from '@src/components';
 import { mq } from '@src/utils';
 
 const DigitalAgencySection: FC = () => (
@@ -60,7 +68,7 @@ const Description = styled(Text)`
     margin-right: 0;
   }
 `;
-const Photo = styled.img`
+const Photo = styled(Image)`
   border-radius: 24px;
   width: 100%;
 `;

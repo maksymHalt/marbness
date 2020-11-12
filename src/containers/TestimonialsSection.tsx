@@ -12,7 +12,8 @@ import {
   Button,
   ArrowLeft,
   ArrowRight,
-  Text
+  Text,
+  Image
 } from '@src/components';
 import { COLORS } from '@src/styles';
 import { addProps, BREAKPOINTS, mq, useWindowResize } from '@src/utils';
@@ -147,7 +148,7 @@ const AuthorBlock = styled.div`
   display: inline-grid;
   grid-template: auto auto / auto auto;
 `;
-const Avatar = styled.img`
+const Avatar = styled(Image)`
   width: 52px;
   height: 52px;
   border-radius: 50%;
