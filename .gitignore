@@ -33,3 +33,6 @@ yarn-error.log*
 # generated files
 public/fonts
 public/img
+
+#config
+gulp/config/sshConfig.json

@@ -1,5 +1,7 @@
 # Marbness Digital Agency
 
+[**Live preview**](http://marbness.tecnologica.agency)
+
 (based on Next.js)
 
 ## Start commands
@@ -8,16 +10,10 @@
 
 - `yarn dev`
 
-**For server production:**
+**For production:**
 
 - once `yarn build` (repeat after changes)
-- to start `yarn start`
-
-**For static production:**
-
-- once `yarn build-static`
-- to start `serve ./src/out`
-  - _Note:_ you should install `serve` globally before, by command `yarn global add serve`
+- `yarn deploy` to deploy static files to server
 
 ## Project structure
 
@@ -30,8 +26,10 @@ All code is stored in folder `src`. Inside we have the following structure:
 - **store** - redux store
 - **models** - redux/rematch models ([more info here](https://github.com/rematch/rematch#step-2-models))
 - **utils** - util functions like validators, checkers etc.
+- **fonts** - fonts that are used to generate lighter formats (woff, woff2) in public folder.
+- **img** - images that are used to generate lighter format (wepb) in public folder.
 
-There stored static files, like fonts, in folder `public`
+There stored static files, like favicon, in folder `public`
 
 ## Styles
 

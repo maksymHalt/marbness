@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "gulp initialBuild && next",
-    "build": "gulp build && next build",
-    "build-static": "gulp build && next build && next export",
+    "build:server": "gulp build && next build",
     "start": "next start",
+    "build": "gulp build && next build && next export",
+    "deploy": "gulp build && next build && next export && gulp deploy",
     "test": "tsc && eslint --ext .tsx,.ts .",
     "test:fix": "tsc && eslint --ext .tsx,.ts --fix ."
   },
@@ -55,6 +56,7 @@
     "eslint-plugin-react": "^7.20.3",
     "eslint-plugin-react-hooks": "^4.0.5",
     "gulp": "^4.0.2",
+    "gulp-ssh": "^0.7.0",
     "gulp-webp": "^4.0.1",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",

@@ -1,0 +1,6 @@
+{
+  "host": "127.10.15.21",
+  "username": "user",
+  "password": "123",
+  "dest": "path/to/dest/folder"
+}

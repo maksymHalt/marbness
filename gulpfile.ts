@@ -8,3 +8,4 @@ export const initialBuild = (cb: () => void): void =>
   !isImagesDone() || !isFontsDone() ? build(cb) : cb();
 
 export { images, fonts };
+export { default as deploy } from './gulp/deploy';
